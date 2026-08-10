@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+<rect width="800" height="900" fill="#e9dccb"/>
+<circle cx="400" cy="360" r="170" fill="#d8c2a8"/>
+<rect x="315" y="205" width="170" height="360" rx="22" fill="#6e2408"/>
+<rect x="350" y="160" width="100" height="65" rx="10" fill="#3f1c12"/>
+<rect x="340" y="320" width="120" height="135" rx="8" fill="#f7eee2"/>
+<text x="400" y="375" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#6e2408">Balmed</text>
+<text x="400" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#6e2408">18</text>
+</svg>
