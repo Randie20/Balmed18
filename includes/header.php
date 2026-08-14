@@ -20,7 +20,7 @@ $pageTitle = $pageTitle ?? APP_NAME;
 
     <meta
         name="description"
-        content="Balmed 18 — handcrafted body care made with love."
+        content="Balmed 18 — Lip care is also skin care."
     >
 
     <title>

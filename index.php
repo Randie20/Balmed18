@@ -34,7 +34,7 @@ require __DIR__ . '/includes/store_header.php';
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-copy">
-            <span class="eyebrow">Handcrafted in Kenya</span>
+            <span class="eyebrow">Lip care is also skin care</span>
 
             <h1>
                 Lip love,<br>
@@ -79,7 +79,7 @@ require __DIR__ . '/includes/store_header.php';
 
         <div class="hero-art">
             <img
-                src="<?= url('assets/images/hero.svg') ?>"
+                src="<?= url('assets/images/trio.jpg') ?>"
                 alt="Balmed 18 product illustration"
             >
         </div>

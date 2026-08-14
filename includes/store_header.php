@@ -21,7 +21,7 @@ $pageTitle = $pageTitle ?? 'Balmed 18';
             <span class="brand-mark">18</span>
             <span>
                 <strong>Balmed 18</strong>
-                <small>Handcrafted in Kenya</small>
+                <small>Lip care is also skin care</small>
             </span>
         </a>
 
