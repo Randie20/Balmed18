@@ -18,7 +18,7 @@
 
         <div>
             <h3>Contact</h3>
-            <a href="tel:+254700000000">+254 700 000 000</a>
+            <a href="tel:+254781585494">+254 781 585 494</a>
             <a href="mailto:hello@balmed18.co.ke">hello@balmed18.co.ke</a>
             <span>Nairobi, Kenya</span>
         </div>
