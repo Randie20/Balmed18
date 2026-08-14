@@ -1,10 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
-require_once __DIR__ . '/../includes/functions.php';
+session_start();
 
-if (admin_logged_in()) {
-    redirect('admin/dashboard.php');
+if (isset($_SESSION['admin_id'])) {
+    header('Location: dashboard.php');
+    exit;
 }
 
-redirect('admin/login.php');
+header('Location: login.php');
+exit;
