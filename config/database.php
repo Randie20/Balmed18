@@ -26,13 +26,30 @@ function db(): PDO
     ];
 
     /*
-     * Aiven requires SSL.
+     * Aiven requires an SSL connection.
      *
-     * The CA certificate is only required when connecting
-     * to the production Aiven database.
+     * The CA certificate is stored in the project root:
+     *
+     * Balmed18/
+     * ├── ca.pem
+     * ├── config/
+     * │   ├── config.php
+     * │   └── database.php
+     * └── ...
+     *
+     * Therefore, from this directory we move one level up
+     * to locate ca.pem.
      */
     if (DB_HOST !== '127.0.0.1' && DB_HOST !== 'localhost') {
-        $options[PDO::MYSQL_ATTR_SSL_CA] = DB_SSL_CA;
+        $caPath = dirname(__DIR__) . '/ca.pem';
+
+        if (!file_exists($caPath)) {
+            throw new RuntimeException(
+                'Aiven CA certificate not found: ' . $caPath
+            );
+        }
+
+        $options[PDO::MYSQL_ATTR_SSL_CA] = $caPath;
         $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = true;
     }
 
