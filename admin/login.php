@@ -5,7 +5,6 @@ declare(strict_types=1);
 require_once __DIR__ . '/../includes/functions.php';
 
 $pageTitle = 'Admin Login';
-
 $error = null;
 
 if (is_post()) {
@@ -28,11 +27,8 @@ if (is_post()) {
             $admin = $stmt->fetch();
 
             if (
-                $admin
-                && password_verify(
-                    $password,
-                    $admin['password']
-                )
+                $admin &&
+                password_verify($password, $admin['password'])
             ) {
                 session_regenerate_id(true);
 
@@ -49,17 +45,58 @@ if (is_post()) {
         }
     }
 }
-
-require __DIR__ . '/../includes/store_header.php';
 ?>
 
-<section class="auth-section">
-    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-        <div class="auth-card">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-            <div class="auth-header">
-                <span class="eyebrow">Administration</span>
+    <meta
+        name="description"
+        content="Balmed 18 administration login"
+    >
+
+    <title><?= e($pageTitle) ?> | Balmed 18</title>
+
+    <link
+        rel="stylesheet"
+        href="<?= e(url('admin/assets/css/admin.css')) ?>"
+    >
+</head>
+
+<body class="admin-auth-page">
+
+<div class="admin-auth-shell">
+
+    <div class="admin-auth-brand">
+        <a
+            href="<?= e(url('index.php')) ?>"
+            class="admin-brand"
+        >
+            <span class="admin-brand-mark">18</span>
+
+            <span class="admin-brand-text">
+                <strong>Balmed 18</strong>
+                <small>Administration</small>
+            </span>
+        </a>
+    </div>
+
+    <main class="admin-auth-main">
+
+        <section class="admin-login-card">
+
+            <div class="admin-login-header">
+
+                <span class="admin-eyebrow">
+                    Administration
+                </span>
 
                 <h1>
                     Welcome back.
@@ -68,11 +105,15 @@ require __DIR__ . '/../includes/store_header.php';
                 <p>
                     Sign in to manage your Balmed 18 store.
                 </p>
+
             </div>
 
-            <?php if ($error): ?>
+            <?php if ($error !== null): ?>
 
-                <div class="alert alert-error">
+                <div
+                    class="admin-alert admin-alert-error"
+                    role="alert"
+                >
                     <?= e($error) ?>
                 </div>
 
@@ -81,10 +122,11 @@ require __DIR__ . '/../includes/store_header.php';
             <form
                 method="post"
                 action="<?= e(url('admin/login.php')) ?>"
-                class="auth-form"
+                class="admin-login-form"
             >
 
-                <div class="form-group">
+                <div class="admin-form-group">
+
                     <label for="email">
                         Email address
                     </label>
@@ -95,42 +137,66 @@ require __DIR__ . '/../includes/store_header.php';
                         name="email"
                         value="<?= old('email') ?>"
                         autocomplete="email"
+                        placeholder="admin@balmed18.com"
                         required
                     >
+
                 </div>
 
-                <div class="form-group">
-                    <label for="password">
-                        Password
-                    </label>
+                <div class="admin-form-group">
+
+                    <div class="admin-label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                    </div>
 
                     <input
                         type="password"
                         id="password"
                         name="password"
                         autocomplete="current-password"
+                        placeholder="Enter your password"
                         required
                     >
+
                 </div>
 
                 <button
                     type="submit"
-                    class="btn btn-primary"
+                    class="admin-login-button"
                 >
                     Sign in
                 </button>
 
             </form>
 
-            <div class="auth-footer">
+            <div class="admin-login-footer">
+
                 <a href="<?= e(url('index.php')) ?>">
-                    ← Back to store
+                    <span aria-hidden="true">←</span>
+                    Back to store
                 </a>
+
             </div>
 
-        </div>
+        </section>
 
-    </div>
-</section>
+    </main>
 
-<?php require __DIR__ . '/../includes/store_footer.php'; ?>
+    <footer class="admin-auth-footer">
+        <span>
+            © <?= date('Y') ?> Balmed 18
+        </span>
+
+        <span>
+            Administration Portal
+        </span>
+    </footer>
+
+</div>
+
+</body>
+</html>

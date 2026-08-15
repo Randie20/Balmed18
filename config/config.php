@@ -50,6 +50,40 @@ define(
 );
 
 define(
+    'BASE_URL',
+    getenv('BASE_URL') ?: 'http://localhost/balmed18'
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Delivery Configuration
+|--------------------------------------------------------------------------
+|
+| Set DELIVERY_FEE in Render environment variables if you want a
+| different production delivery charge.
+|
+| Example:
+| DELIVERY_FEE=200
+|
+*/
+
+define(
+    'DELIVERY_FEE',
+    (float) (getenv('DELIVERY_FEE') ?: 0)
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Upload Configuration
+|--------------------------------------------------------------------------
+|
+| Maximum product image size: 5MB
+|
+*/
+
+define(
     'MAX_UPLOAD_SIZE',
     5 * 1024 * 1024
 );
@@ -57,7 +91,7 @@ define(
 
 /*
 |--------------------------------------------------------------------------
-| Upload Configuration
+| Product Upload Directory
 |--------------------------------------------------------------------------
 |
 | Product images are stored inside:
