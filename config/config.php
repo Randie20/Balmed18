@@ -36,3 +36,37 @@ define(
     'DB_PASS',
     getenv('DB_PASS') ?: ''
 );
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Configuration
+|--------------------------------------------------------------------------
+*/
+
+define(
+    'CURRENCY',
+    getenv('CURRENCY') ?: 'KES'
+);
+
+define(
+    'MAX_UPLOAD_SIZE',
+    5 * 1024 * 1024
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Upload Configuration
+|--------------------------------------------------------------------------
+|
+| Product images are stored inside:
+|
+| uploads/products/
+|
+*/
+
+define(
+    'PRODUCT_UPLOAD_DIR',
+    dirname(__DIR__) . '/uploads/products/'
+);
