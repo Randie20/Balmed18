@@ -66,7 +66,7 @@ if (is_post()) {
 
     <link
         rel="stylesheet"
-        href="<?= e(url('admin/assets/css/admin.css')) ?>"
+        href="<?= e(url('assets/css/admin.css')) ?>"
     >
 </head>
 
