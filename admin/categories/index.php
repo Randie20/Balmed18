@@ -59,4 +59,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     </div>
 </div>
 
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>
+<?php require __DIR__ . '/../../assets/css/admin.css'; ?>
