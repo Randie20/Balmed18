@@ -26,6 +26,7 @@ if (is_post()) {
 
 $pageTitle = 'Delete category';
 $currentAdminPage = 'categories';
+require __DIR__ . '/../../includes/admin_header.php';
 
 ?>
 
@@ -45,3 +46,6 @@ $currentAdminPage = 'categories';
 </div>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+
+
+<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>

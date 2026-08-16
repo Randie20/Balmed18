@@ -21,6 +21,8 @@ $recentOrders = db()->query(
 $pageTitle = 'Dashboard';
 $currentAdminPage = 'dashboard';
 
+require __DIR__ . '/../../includes/admin_header.php';
+
 ?>
 
 <div class="metric-grid">
@@ -120,3 +122,5 @@ $currentAdminPage = 'dashboard';
 </div>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+
+<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>

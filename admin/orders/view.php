@@ -23,6 +23,8 @@ $items = $itemStmt->fetchAll();
 $pageTitle = 'Order #' . $id;
 $currentAdminPage = 'orders';
 
+require __DIR__ . '/../../includes/admin_header.php';
+
 ?>
 
 <div class="page-actions">
@@ -119,3 +121,5 @@ $currentAdminPage = 'orders';
 </div>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+
+<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>

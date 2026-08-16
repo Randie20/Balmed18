@@ -73,6 +73,8 @@ if (is_post()) {
 $pageTitle = 'Add product';
 $currentAdminPage = 'products';
 
+require __DIR__ . '/../../includes/admin_header.php';
+
 ?>
 
 <?php if ($errors): ?>
@@ -84,6 +86,7 @@ $currentAdminPage = 'products';
         </ul>
     </div>
 <?php endif; ?>
+
 
 <form class="admin-form product-form" method="post" enctype="multipart/form-data">
     <?= csrf_field() ?>
@@ -197,3 +200,5 @@ $currentAdminPage = 'products';
 </form>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+
+<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>
