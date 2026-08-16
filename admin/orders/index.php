@@ -68,4 +68,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     <?php endif; ?>
 </div>
 
-<?php require __DIR__ . '/../../assets/css/admin.css'; ?>
+<?php require __DIR__ . 'assets/css/admin.css'; ?>

@@ -26,7 +26,6 @@ if (is_post()) {
 $pageTitle = 'Delete product';
 $currentAdminPage = 'products';
 
-require __DIR__ . '/../../includes/admin_header.php';
 ?>
 
 <div class="panel danger-panel">
@@ -44,4 +43,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     </form>
 </div>
 
-<?php require __DIR__ . '/../../assets/css/admin.css'; ?>
+<?php require __DIR__ . 'assets/css/admin.css'; ?>

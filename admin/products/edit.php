@@ -83,7 +83,6 @@ if (is_post()) {
 $pageTitle = 'Edit product';
 $currentAdminPage = 'products';
 
-require __DIR__ . '/../../includes/admin_header.php';
 ?>
 
 <?php if ($errors): ?>
@@ -236,4 +235,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     </div>
 </form>
 
-<?php require __DIR__ . '/../../assets/css/admin.css'; ?>
+<?php require __DIR__ . 'assets/css/admin.css'; ?>
