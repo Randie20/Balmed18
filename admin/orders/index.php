@@ -10,7 +10,6 @@ $orders = db()->query(
 $pageTitle = 'Orders';
 $currentAdminPage = 'orders';
 
-require __DIR__ . '/../../includes/admin_header.php';
 ?>
 
 <div class="page-actions">
@@ -68,4 +67,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     <?php endif; ?>
 </div>
 
-<?php require __DIR__ . 'assets/css/admin.css'; ?>
+<link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">

@@ -89,4 +89,4 @@ require __DIR__ . '/../../includes/admin_header.php';
     </div>
 </form>
 
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>
+<link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">

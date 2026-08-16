@@ -118,4 +118,4 @@ $currentAdminPage = 'orders';
     </aside>
 </div>
 
-<?php require __DIR__ . 'assets/css/admin.css'; ?>
+<link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
