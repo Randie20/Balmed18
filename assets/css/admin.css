@@ -168,3 +168,506 @@ hr { margin: 22px 0; border: 0; border-top: 1px solid var(--line); }
     .metric-card strong { font-size: 27px; }
     .login-card { padding: 24px; }
 }
+
+/* =========================================================
+   COLLAPSIBLE ADMIN SIDEBAR
+   ========================================================= */
+
+:root {
+    --admin-sidebar-width: 250px;
+    --admin-sidebar-collapsed-width: 78px;
+    --admin-sidebar-transition: 0.28s ease;
+}
+
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: var(--admin-sidebar-width);
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--admin-brown-dark);
+
+    transition:
+        width var(--admin-sidebar-transition),
+        transform var(--admin-sidebar-transition);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   Sidebar Brand
+   ========================================================= */
+
+.admin-sidebar-brand {
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 24px 20px;
+
+    flex-shrink: 0;
+}
+
+.admin-sidebar-brand a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-width: 0;
+}
+
+.admin-sidebar-brand .admin-brand-mark {
+    flex-shrink: 0;
+}
+
+.admin-sidebar-brand .admin-brand-text {
+    white-space: nowrap;
+
+    transition:
+        opacity var(--admin-sidebar-transition),
+        transform var(--admin-sidebar-transition);
+}
+
+
+/* =========================================================
+   Toggle
+   ========================================================= */
+
+.admin-sidebar-toggle {
+    position: absolute;
+
+    top: 24px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 9px;
+
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.admin-sidebar-toggle span {
+    width: 15px;
+    height: 1.5px;
+
+    display: block;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   Navigation
+   ========================================================= */
+
+.admin-sidebar-nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 8px 18px 24px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.admin-sidebar-nav a {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 14px;
+
+    margin-bottom: 5px;
+
+    border-radius: 11px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-sidebar-nav a:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transform: translateX(2px);
+}
+
+.admin-sidebar-nav a.active {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        inset 3px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   Navigation Icons
+   ========================================================= */
+
+.admin-nav-icon {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: currentColor;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   Logout
+   ========================================================= */
+
+.admin-sidebar-logout {
+    margin-top: auto !important;
+
+    color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.admin-sidebar-logout:hover {
+    color: #ffffff !important;
+
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   Main Content
+   ========================================================= */
+
+.admin-main {
+    min-height: 100vh;
+
+    margin-left: var(--admin-sidebar-width);
+
+    transition:
+        margin-left var(--admin-sidebar-transition);
+}
+
+
+/* =========================================================
+   Collapsed State
+   ========================================================= */
+
+body.admin-sidebar-collapsed .admin-sidebar {
+    width: var(--admin-sidebar-collapsed-width);
+}
+
+body.admin-sidebar-collapsed .admin-main {
+    margin-left: var(--admin-sidebar-collapsed-width);
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-brand {
+    justify-content: center;
+
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-brand .admin-brand-text {
+    width: 0;
+
+    opacity: 0;
+
+    transform: translateX(-10px);
+
+    pointer-events: none;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-toggle {
+    top: 72px;
+    right: 20px;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav a {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    gap: 0;
+
+    font-size: 0;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav a.active {
+    box-shadow: none;
+}
+
+body.admin-sidebar-collapsed .admin-nav-icon {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   Tooltip for Collapsed Navigation
+   ========================================================= */
+
+body.admin-sidebar-collapsed .admin-sidebar-nav a {
+    position: relative;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav a::after {
+    content: attr(data-label);
+
+    position: absolute;
+
+    left: calc(100% + 12px);
+    top: 50%;
+
+    transform: translateY(-50%) translateX(-5px);
+
+    padding: 8px 10px;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+    background: #241811;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+body.admin-sidebar-collapsed .admin-sidebar-nav a:hover::after {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(-50%) translateX(0);
+}
+
+
+/* =========================================================
+   Mobile Sidebar
+   ========================================================= */
+
+.admin-mobile-toggle {
+    display: none;
+}
+
+.admin-sidebar-overlay {
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: var(--admin-sidebar-width);
+
+        transform: translateX(-100%);
+    }
+
+    body.admin-sidebar-mobile-open .admin-sidebar {
+        transform: translateX(0);
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    body.admin-sidebar-collapsed .admin-main {
+        margin-left: 0;
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar {
+        width: var(--admin-sidebar-width);
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar-brand .admin-brand-text {
+        width: auto;
+
+        opacity: 1;
+
+        transform: none;
+
+        pointer-events: auto;
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar-nav a {
+        justify-content: flex-start;
+
+        padding-left: 14px;
+        padding-right: 14px;
+
+        gap: 14px;
+
+        font-size: 13px;
+    }
+
+    body.admin-sidebar-collapsed .admin-nav-icon {
+        font-size: 16px;
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar-toggle {
+        top: 24px;
+        right: 14px;
+    }
+
+    body.admin-sidebar-collapsed .admin-sidebar-nav a::after {
+        display: none;
+    }
+
+    .admin-mobile-toggle {
+        position: fixed;
+
+        top: 18px;
+        left: 18px;
+
+        width: 44px;
+        height: 44px;
+
+        z-index: 900;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid var(--admin-border);
+        border-radius: 10px;
+
+        background: #ffffff;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 8px 24px rgba(57, 30, 18, 0.10);
+    }
+
+    .admin-mobile-toggle span {
+        position: absolute;
+
+        width: 18px;
+        height: 2px;
+
+        background: var(--admin-brown);
+
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
+    }
+
+    .admin-mobile-toggle span:nth-child(1) {
+        transform: translateY(-6px);
+    }
+
+    .admin-mobile-toggle span:nth-child(3) {
+        transform: translateY(6px);
+    }
+
+    body.admin-sidebar-mobile-open .admin-mobile-toggle span:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    body.admin-sidebar-mobile-open .admin-mobile-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.admin-sidebar-mobile-open .admin-mobile-toggle span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .admin-sidebar-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 950;
+
+        display: block;
+
+        background: rgba(36, 24, 17, 0.42);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    body.admin-sidebar-mobile-open .admin-sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+}

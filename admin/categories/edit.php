@@ -101,6 +101,6 @@ require __DIR__ . '/../../includes/admin_header.php';
         <button class="admin-btn" type="submit">Save changes</button>
     </div>
 </form>
+<script src="<?= url('assets/js/admin.js') ?>"></script>
 
 <?php require __DIR__ . '/../../assets/css/admin.css'; ?>
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>

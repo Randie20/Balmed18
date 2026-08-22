@@ -197,6 +197,6 @@ if (is_post()) {
     </footer>
 
 </div>
-
+<script src="<?= url('assets/js/admin.js') ?>"></script>
 </body>
 </html>

@@ -237,4 +237,5 @@ $currentAdminPage = 'products';
 </form>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+<script src="<?= url('assets/js/admin.js') ?>"></script>
 

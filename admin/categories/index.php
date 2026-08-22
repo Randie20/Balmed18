@@ -58,4 +58,6 @@ $currentAdminPage = 'categories';
     </div>
 </div>
 
+<script src="<?= url('assets/js/admin.js') ?>"></script>
+
 <?php require __DIR__ . '/../../assets/css/admin.css'; ?>
