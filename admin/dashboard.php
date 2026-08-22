@@ -25,12 +25,24 @@ $currentAdminPage = 'dashboard';
 ?>
 
 <div>
-    <aside class="admin-sidebar">
-    <a class="admin-logo" href="<?= url('admin/dashboard.php') ?>">
-        <span>18</span>
-        <strong>Balmed 18</strong>
-        <small>Admin</small>
-    </a>
+    <aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-sidebar-brand">
+        <!-- your existing Balmed 18 branding -->
+    </div>
+
+    <button
+        type="button"
+        class="admin-sidebar-toggle"
+        id="adminSidebarToggle"
+        aria-label="Collapse sidebar"
+        aria-expanded="true"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
 
     <nav class="admin-nav">
         <a class="<?= $currentAdminPage === 'dashboard' ? 'active' : '' ?>" href="<?= url('admin/dashboard.php') ?>">Dashboard</a>
@@ -40,6 +52,7 @@ $currentAdminPage = 'dashboard';
         <a href="<?= url('index.php') ?>">View storefront</a>
         <a href="<?= url('admin/logout.php') ?>">Logout</a>
     </nav>
+
 </aside>
 </div>
 <div class="metric-grid">
@@ -140,4 +153,3 @@ $currentAdminPage = 'dashboard';
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
 
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>
