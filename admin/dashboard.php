@@ -54,6 +54,22 @@ $currentAdminPage = 'dashboard';
     </nav>
 
 </aside>
+
+<button
+    type="button"
+    class="admin-mobile-toggle"
+    id="adminMobileToggle"
+    aria-label="Open navigation"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div
+    class="admin-sidebar-overlay"
+    id="adminSidebarOverlay"
+></div>
 </div>
 <div class="metric-grid">
     <div class="metric-card">
