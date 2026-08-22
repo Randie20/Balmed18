@@ -13,7 +13,6 @@ $products = db()->query(
 $pageTitle = 'Products';
 $currentAdminPage = 'products';
 
-require __DIR__ . '/../../includes/admin_header.php';
 
 ?>
 
@@ -100,4 +99,3 @@ require __DIR__ . '/../../includes/admin_header.php';
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
 
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>

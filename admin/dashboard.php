@@ -21,7 +21,6 @@ $recentOrders = db()->query(
 $pageTitle = 'Dashboard';
 $currentAdminPage = 'dashboard';
 
-require __DIR__ . '/includes/admin_header.php';
 
 ?>
 

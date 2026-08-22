@@ -14,7 +14,6 @@ $categories = db()->query(
 $pageTitle = 'Categories';
 $currentAdminPage = 'categories';
 
-require __DIR__ . '/../../includes/admin_header.php';
 ?>
 
 <div class="page-actions">
@@ -60,4 +59,3 @@ require __DIR__ . '/../../includes/admin_header.php';
 </div>
 
 <?php require __DIR__ . '/../../assets/css/admin.css'; ?>
-<?php require __DIR__ . '/../../includes/admin_footer.php'; ?>
