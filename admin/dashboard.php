@@ -44,18 +44,7 @@ $currentAdminPage = 'dashboard';
     </button>
 
 
-    <nav class="admin-nav">
-        <a class="<?= $currentAdminPage === 'dashboard' ? 'active' : '' ?>" href="<?= url('admin/dashboard.php') ?>">Dashboard</a>
-        <a class="<?= $currentAdminPage === 'products' ? 'active' : '' ?>" href="<?= url('admin/products/index.php') ?>">Products</a>
-        <a class="<?= $currentAdminPage === 'categories' ? 'active' : '' ?>" href="<?= url('admin/categories/index.php') ?>">Categories</a>
-        <a class="<?= $currentAdminPage === 'orders' ? 'active' : '' ?>" href="<?= url('admin/orders/index.php') ?>">Orders</a>
-        <a href="<?= url('index.php') ?>">View storefront</a>
-        <a href="<?= url('admin/logout.php') ?>">Logout</a>
-    </nav>
-
 </aside>
-
-
 </div>
 <div class="metric-grid">
     <div class="metric-card">
@@ -154,5 +143,4 @@ $currentAdminPage = 'dashboard';
 </div>
 
 <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
-<script src="<?= url('assets/js/admin.js') ?>"></script>
 
